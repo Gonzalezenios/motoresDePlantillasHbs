@@ -11,7 +11,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.engine('.hbs', handlebars({}));
+app.engine('.hbs', handlebars.engine({
+    extname: '.hbs',
+    defaultLayout: '',
+    layoutsDir: __dirname + '',
+}));
 app.set('view engine', 'hbs');
 app.set("views", "./views/layouts");
 
@@ -62,7 +66,7 @@ router.post('/productos/guardar', (req, res) => {
 
     products.addProduct(req.body)
 
-    res.redirect('/productos/vista');
+    res.redirect('/productos/vistas');
 });
 
 router.put('/productos/actualizar/:id', (req, res) => {

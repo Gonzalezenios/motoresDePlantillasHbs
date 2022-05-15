@@ -15,7 +15,7 @@
                 <h1>Lista de Productos</h1>
             </div>
             <div class="col-md-6">
-                <a href="http://localhost:4000/" class="btn btn-primary">Cargar Productos</a>
+                <a href="http://localhost:8080/" class="btn btn-primary">Cargar Productos</a>
             </div>
         </div>
         <div class="row mt-5">
@@ -33,7 +33,7 @@
                         <tr>
                             <td scope="col align-middle">{{this.title}}</td>
                             <td scope="col">{{this.price}}</td>
-                            <td scope="col"><img src="{{this.thumbnail}}" alt="{{this.title}}" height="50px"></td>
+                            <td scope="col"><img src="{{this.thumbnail}}" alt="{{this.title}}" width="50"></td>
                         </tr>
                     {{/each}}
                 </tbody>
